@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.DetailesFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:expandedTitleTextColor="@color/red"
+            app:contentScrim="@color/red"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:title="Meal name">
+
+            <ImageView
+                android:id="@+id/img_meal_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mealtest"
+                app:layout_collapseMode="parallax" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                app:layout_collapseMode="pin"
+                app:titleTextColor="@color/white" />
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+
+            <LinearLayout
+                android:id="@+id/meal_info"
+                android:weightSum="10"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_categoryInfo"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+
+                    android:layout_marginStart="15dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/ic_category"
+                    android:drawablePadding="5dp"
+                    android:text="Category : "
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_areaInfo"
+                    android:layout_width="0dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:drawableLeft="@drawable/ic_area"
+                    android:drawablePadding="5dp"
+                    android:text="Area : "
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+
+          <LinearLayout
+              android:orientation="vertical"
+              app:layout_constraintTop_toBottomOf="@id/meal_info"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+              <TextView
+                  android:id="@+id/tv_instructions"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginStart="15dp"
+                  android:layout_marginTop="10dp"
+                  android:fontFamily="@font/myfont"
+                  android:includeFontPadding="false"
+                  android:textColor="@color/black"
+                  android:text="- Intructions"
+                  android:textSize="18sp"
+                  android:textStyle="bold"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/meal_info" />
+
+              <TextView
+                  android:id="@+id/tv_content"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_marginStart="20dp"
+                  android:layout_marginEnd="10dp"
+                  android:textColor="@color/black"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@id/tv_instructions" />
+          </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+        <ImageView
+            android:id="@+id/img_youtube"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginBottom="40dp"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/yt_icon" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_save"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
+        app:layout_constraintRight_toRightOf="@id/appBar"
+        android:layout_marginTop="-30dp"
+        android:layout_marginRight="30dp"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_save_24"
+        app:backgroundTint="@color/red"
+        app:fabSize="normal"
+        app:layout_anchor="@id/appBar"
+        app:tint="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         />
+    <ImageView
+        android:id="@+id/imgback_detail"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:src="@drawable/ic_arrow_back"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="34dp"
+        android:layout_height="34dp"/>
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_anchor="@id/appBar"
+        app:layout_anchorGravity="bottom|end" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
